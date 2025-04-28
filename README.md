@@ -20,21 +20,21 @@ Minesweeper Console is a console-based implementation of the classic Minesweeper
 
 2. Navigate to the project directory:
 
-  ```bash
-  cd Minesweeper-Console
-  ```
+   ```bash
+   cd Minesweeper-Console
+   ```
 
 3. Compile the code using a C++ compiler:
 
-  ```bash
-  g++ -o minesweeper main.cpp source/Board/Board.cpp source/Game/Game.cpp -Iheader
-  ```
+   ```bash
+   g++ -o minesweeper main.cpp source/Board/Board.cpp source/Game/Game.cpp -Iheader
+   ```
 
 4. Run the game:
 
-  ```bash
-  ./minesweeper
-  ```
+   ```bash
+   ./minesweeper
+   ```
 
 ## Usage
 
