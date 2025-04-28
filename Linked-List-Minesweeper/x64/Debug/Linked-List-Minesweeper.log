@@ -1,8 +1,0 @@
-﻿  main.cpp
-  Board.cpp
-  Game.cpp
-D:\Outscal\Game Projects\Text-Based Games\Linked-List-Minesweeper\Linked-List-Minesweeper\source\Board\Board.cpp(13,19): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-D:\Outscal\Game Projects\Text-Based Games\Linked-List-Minesweeper\Linked-List-Minesweeper\source\Game\Game.cpp(42,29): warning C4566: character represented by universal-character-name '\U0001F4A5' cannot be represented in the current code page (1252)
-D:\Outscal\Game Projects\Text-Based Games\Linked-List-Minesweeper\Linked-List-Minesweeper\source\Game\Game.cpp(48,29): warning C4566: character represented by universal-character-name '\U0001F389' cannot be represented in the current code page (1252)
-  Generating Code...
-  Linked-List-Minesweeper.vcxproj -> D:\Outscal\Game Projects\Text-Based Games\Linked-List-Minesweeper\x64\Debug\Linked-List-Minesweeper.exe
