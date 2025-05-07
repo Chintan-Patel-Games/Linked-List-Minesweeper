@@ -5,7 +5,7 @@ using namespace std;
 
 namespace Game
 {
-    void Game::printRules()
+    void Game::printRules() // Prints the game rules and instructions for the player
     {
         cout << "----------------------------------------\n";
         cout << "        Welcome to Minesweeper!\n";
@@ -18,38 +18,49 @@ namespace Game
         cout << "- f row col --> flag/unflag\n";
         cout << "First move is always safe.\n\n";
     }
-
-    void Game::run()
+    
+    void Game::run() // Main game loop: handles input, board updates, and win/loss conditions
     {
-        printRules();
+        printRules();  // Display rules at game start
 
-        bool gameOver = false;
+        bool gameOver = false;  // Game loop control flag
+        char command;           // Command input: 'r' for reveal, 'f' for flag
+        int row, col;           // Cell coordinates
 
+        // Game continues until player wins or hits a mine
         while (!gameOver)
         {
-            board.display();
-            cout << "Enter command (r row col) or (f row col): ";
-            char command;
-            int r, c;
-            cin >> command >> r >> c;
+            board.display();  // Show the current state of the board
 
-            if (command == 'r')
+            // Get user input
+            cout << "Enter command (r row col) or (f row col): ";
+
+            if (!(cin >> command >> row >> col)) {
+                cout << "Invalid input format! Please use: r row col or f row col\n";
+                cin.clear();               // Clear the error state
+                cin.ignore(10000, '\n');   // Discard the rest of the line
+                continue;                  // Prompt again
+            }
+
+            if (command == 'r') // Reveal cell
             {
-                bool safe = board.reveal(r, c);
-                if (!safe)
+                bool safe = board.reveal(row, col);
+                if (!safe) // Hit a mine
                 {
-                    board.display(true);
-                    cout << "💥 Game Over! You hit a mine!\n";
+                    board.display(true);  // Reveal all mines
+                    cout << "Game Over! You hit a mine!\n";
                     gameOver = true;
                 }
-                else if (board.isGameWon())
+                else if (board.isGameWon()) // All safe cells revealed
                 {
-                    board.display();
-                    cout << "🎉 Congratulations! You won!\n";
+                    board.display();  // Show final board
+                    cout << "Congratulations! You won!\n";
                     gameOver = true;
                 }
             }
-            else if (command == 'f') board.toggleFlag(r, c);
+            // Flag or unflag a cell
+            else if (command == 'f') board.toggleFlag(row, col);
+            // Invalid input
             else cout << "Invalid command!\n";
         }
     }
