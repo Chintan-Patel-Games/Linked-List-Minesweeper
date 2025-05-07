@@ -9,7 +9,7 @@ namespace Game
         Board::Board board;
 
     public:
-        void printRules();
-        void run();
+        void printRules(); // Displays the game rules to the player
+        void run(); // Starts and manages the main game loop (user input, board updates, win/loss checks)
     };
 }
